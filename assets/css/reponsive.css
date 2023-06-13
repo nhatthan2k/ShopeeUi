@@ -1,0 +1,133 @@
+/* pc */
+@media (min-width: 1024px) {
+    .hide-on-pc{
+        display: none;
+    }
+}
+
+/* mobile & tablet */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+
+    .show-on-mobile-tablet{
+        display: block;
+    }
+
+    :root {
+        --header-height: 68px;
+        --header__navbar-height: 0px;
+    }
+
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    .header__cart-list{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::before{
+        display: none;
+    }
+
+    .app__container{
+        margin-top: calc(var(--header-height) + var(--header__soft-height));
+    }
+
+    .app__content{
+        padding-top: 0;
+    }
+}   
+
+/* tablet */
+@media (min-width:740px) and (max-width: 1023px) {
+    .hide-on-tablet{
+        display: none;
+    }
+
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+
+    .header__cart-notice{
+        right: -3px;
+    }
+}
+
+/* mobile */
+@media (max-width: 739px) {
+    .show-on-mobile{
+        display: block;
+    }
+
+    :root {
+        --header-height: 54px;
+        --header__navbar-height: 0px;
+    }
+
+    .hide-on-mobile{
+        display: none;
+    }
+
+    .header__logo-img {
+        width: 110px;
+    }
+    .header__with-search{
+        justify-content: space-between;
+    }
+
+    .header__search{
+        position: fixed;
+        display: none;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        animation: mobileSearchSideIn ease-in 0.3s;
+    }
+
+    @keyframes mobileSearchSideIn {
+        from{
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        }
+        to{
+            opacity: 1;
+            top: var(--header-height);
+        }   
+    }
+
+    .header__cart,
+    .header__logo{
+        width: unset;
+    }
+
+    .header__cart-notice{
+        right: 0;
+    }
+
+    .pagination-item__link {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .footer__heading{
+        text-align: center;
+    }
+
+    .footer-item__link{
+        justify-content: center;
+    }
+}
